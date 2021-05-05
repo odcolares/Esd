@@ -5,4 +5,4 @@ from Esdapp.models import esd
 class esdForm(ModelForm):
      class Meta:
          model = esd
-         fields = ['nome', 'setor', 'matricula', 'status']
+         fields = ['nome', 'matricula', 'setor']

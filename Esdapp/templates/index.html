@@ -13,7 +13,7 @@
     <div/>
 
     <div class="container-fluid pt-3 pb-2 text-center">
-        <a href="/form" class="btn btn-success">Adicionar</a>
+        <a href="/form" class="btn btn-success">Cadastrar</a>
     <div/>
 
     <div class="container-fluid pt-4 pb-2 text-center">
@@ -24,17 +24,23 @@
                     <th scope="col">Nome</th>
                     <th scope="col">Matricula</th>
                     <th scope="col">Setor</th>
-                    <th scope="col">Status</th>
+                    <th scope="col">Acões</th>
                 </tr>
             </thead>
             <tbody>
+            {% for dbs in db%}
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Odair Colares</td>
-                    <td>123456</td>
-                    <td>Sistemas</td>
-                    <td>Aprovado</td>
+                    <th>{{dbs.id}}</th>
+                    <td>{{dbs.nome}}</td>
+                    <td>{{dbs.matricula}}</td>
+                    <td>{{dbs.setor}}</td>
+                    <td>
+                        <a href="" class="btn btn-outline-success">Visualizar</a>
+                        <a href="" class="btn btn-outline-warning">Editar</a>
+                        <a href="" class="btn btn-outline-danger">Deletar</a>
+                    </td>
                 </tr>
+            {% endfor%}   
             </tbody>
         </table>
     <div/>

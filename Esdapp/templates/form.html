@@ -16,23 +16,19 @@
         <a href="/" class="btn btn-info">Voltar</a>
     <div/>
 
-    <div class="container-fluid pt-4 pb-2 text-center">
-       <form>
-            <div class="container-fluid">
-                <label for="exampleInputnome">Nome</label>
-                <input type="nome" class="form-control" id="exampleInputnome" aria-describedby="nomelHelp" placeholder="Adcione seu nome">
-                <small id="nameHelp" class="form-text text-muted">Inicie seu nome com letras maiusculas.</small>
-            </div>
-            <div class="container-fluid">
-                <label for="exampleInputSetor">Setor</label>
-                <input type="Setor" class="form-control" id="exampleInputSetor" aria-describedby="SetorHelp" placeholder="Adcione seu Setor">
-                <small id="SetorHelp" class="form-text text-muted">Adcione seu setor.</small>
-            </div>
-            <div class="container-fluid">
-                <label for="exampleInputMatricula">Matricula</label>
-                <input type="Matricula" class="form-control" id="exampleInputMatricula" aria-describedby="MatriculaHelp" placeholder="Adcione seu Matricula">
-                <small id="MatriculaHelp" class="form-text text-muted">Adcione sua matricula.</small>
-            </div>
+    <div class="container-fluid pt-3 pb-2 text-center">
+       <form name ="form" id ="form" action ="/create/" method ="post">
+                {% csrf_token %}
+                <div class="form-group mt-4">{{form.nome}}
+                    <small id="nameHelp" class="form-text text-muted">Inicie seu nome com letras maiusculas.</small>
+                </div>
+                <div class="form-group mt-4">{{form.matricula}}
+                    <small id="MatriculaHelp" class="form-text text-muted">Adcione sua matricula.</small
+                </div>
+               <div class="form-group mt-4">{{form.setor}}
+                    <small id="SetorHelp" class="form-text text-muted">Adcione seu setor.</small>
+                </div>
+            <input type="submit" class="btn btn-success" value="Salvar">
         </form>
     <div/>
 </body>
