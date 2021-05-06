@@ -17,7 +17,7 @@
     <div/>
 
     <div class="container-fluid pt-3 pb-2 text-center">
-       <form name ="form" id ="form" action ="/create/" method ="post">
+       <form name ="form" id ="form" action ="{% if db %}/update{{db.id}}/{% else %}/create/{% endif %}" method ="post">
                 {% csrf_token %}
                 <div class="form-group mt-4">{{form.nome}}
                     <small id="nameHelp" class="form-text text-muted">Inicie seu nome com letras maiusculas.</small>
@@ -30,6 +30,7 @@
                 </div>
             <input type="submit" class="btn btn-success" value="Salvar">
         </form>
+        
     <div/>
 </body>
 </html>

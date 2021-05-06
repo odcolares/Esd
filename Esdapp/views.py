@@ -18,3 +18,17 @@ def create(request):
     if form.is_valid():
         form.save()
         return redirect('home')
+
+def view(request, pk):
+    data = {}
+    data['db'] = esd.objetcs.get(pk=pk)
+    return render(request, 'view.html', data)
+
+def edit(request, pk):
+    data = {}
+    data['db'] = esd.objetcs.get(pk=pk)
+    data['form'] = esdForm(instance=data['db'])
+    return render(request, 'form.html', data)
+
+def update(request, pk):
+    return render(request, 'index.html')

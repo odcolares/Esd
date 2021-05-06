@@ -35,9 +35,9 @@
                     <td>{{dbs.matricula}}</td>
                     <td>{{dbs.setor}}</td>
                     <td>
-                        <a href="" class="btn btn-outline-success">Visualizar</a>
-                        <a href="" class="btn btn-outline-warning">Editar</a>
-                        <a href="" class="btn btn-outline-danger">Deletar</a>
+                        <a href="/view/{{dbs.id}}/" class="btn btn-success">Visualizar</a>
+                        <a href="/edit/{{dbs.id}}/" class="btn btn-warning">Editar</a>
+                        <a href="" class="btn btn-danger">Deletar</a>
                     </td>
                 </tr>
             {% endfor%}   
