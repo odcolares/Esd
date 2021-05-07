@@ -19,16 +19,26 @@ def create(request):
         form.save()
         return redirect('home')
 
-def view(request, pk):
-    data = {}
-    data['db'] = esd.objetcs.get(pk=pk)
-    return render(request, 'view.html', data)
-
 def edit(request, pk):
     data = {}
     data['db'] = esd.objetcs.get(pk=pk)
     data['form'] = esdForm(instance=data['db'])
     return render(request, 'form.html', data)
 
+#def delete(request, pk):
+#    db = esd.objects.get(pk=pk)
+#    db.delete()
+#    return redirect('home')
+
 def update(request, pk):
-    return render(request, 'index.html')
+    data = {}
+    data['db'] = esd.objetcs.get(pk=pk)
+    form = esdForm(request.POST or None, instance=data['db'])
+    if form.is_valid():
+        form.save() 
+        return redirect ('home')
+
+def view(request, id):
+    data = {}
+    data['db'] = esd.objetcs.get(id=id)
+    return render(request, 'view.html', data)
