@@ -1,8 +1,8 @@
 from django.forms import ModelForm
-from Esdapp.models import esd
+from Esdapp.models import Esd
 
 # Create the form class.
-class esdForm(ModelForm):
+class EsdForm(ModelForm):
      class Meta:
-         model = esd
+         model = Esd
          fields = ['nome', 'matricula', 'setor']
