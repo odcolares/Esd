@@ -40,5 +40,5 @@ def update(request, pk):
 
 def view(request, pk):
     data = {}
-    data['db'] = Esd.objects.get(pk=pk)
+    data['db'] = Esd.objects.filter(pk=pk)
     return render(request, 'view.html', data)
