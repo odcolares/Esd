@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,39 +11,41 @@
 <body>
     <div class="container-fluid pt-2 pb-2 text-center">
         <h1>Controle de teste ESD.</h1>
-    <div/>
+        <div />
 
-    <div class="container-fluid pt-3 pb-2 text-center">
-        <a href="/form" class="btn btn-success">Cadastrar</a>
-    <div/>
+        <div class="container-fluid pt-3 pb-2 text-center">
+            <a href="/form" class="btn btn-success">Cadastrar</a>
+            <div />
 
-    <div class="container-fluid pt-4 pb-2 text-center">
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Matricula</th>
-                    <th scope="col">Setor</th>
-                    <th scope="col">Acões</th>
-                </tr>
-            </thead>
-            <tbody>
-            {% for dbs in db %}
-                <tr>
-                    <th>{{dbs.id}}</th>
-                    <td>{{dbs.nome}}</td>
-                    <td>{{dbs.matricula}}</td>
-                    <td>{{dbs.setor}}</td>
-                    <td>
-                        <a href="/view/{{dbs.id}}/" class="btn btn-success">Visualizar</a>
-                        <a href="/edit/{{dbs.id}}/" class="btn btn-warning">Editar</a>
-                        <a href="/delete/{{dbs.id}}/" class="btn btn-danger" >Deletar</a>
-                    </td>
-                </tr>
-            {% endfor %}   
-            </tbody>
-        </table>
+            <div class="container-fluid pt-4 pb-2 text-center">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Matricula</th>
+                            <th scope="col">Setor</th>
+                            <th scope="col">Acões</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for dbs in db %}
+                        <tr>
+                            <th>{{dbs.id}}</th>
+                            <td>{{dbs.nome}}</td>
+                            <td>{{dbs.matricula}}</td>
+                            <td>{{dbs.setor}}</td>
+                            <td>
+                                <a href="/view/{{dbs.id}}/" class="btn btn-success">Visualizar</a>
+                                <a href="/edit/{{dbs.id}}/" class="btn btn-warning">Editar</a>
+                                <a href="/delete/{{dbs.id}}/" class="btn btn-danger">Deletar</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+           <div/>
+        <div/>    
     <div/>
 </body>
 </html>
